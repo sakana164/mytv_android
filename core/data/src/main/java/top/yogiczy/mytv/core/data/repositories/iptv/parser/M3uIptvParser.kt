@@ -12,7 +12,7 @@ class M3uIptvParser : IptvParser {
     private val logger = Logger.create("M3uIptvParser")
 
     override fun isSupport(url: String, data: String): Boolean {
-        return data.contains("#EXTM3U")
+        return data.contains("#EXTINF:-1")
     }
 
     override suspend fun parse(data: String) =
